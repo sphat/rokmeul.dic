@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.hibernate.tool.dic.MutualWord" table="MUTUAL_WORD">
+		<id name="pk_seq" type="java.lang.Long">
+			<column name="PK_SEQ" />
+			<!-- <generator class="increment" /> -->
+			<generator class="identity" />
+		</id>
+		<many-to-one name="word_seq" class="metier.hibernate.tool.dic.Word" fetch="select">
+			<column name="FK_WORD_SEQ" not-null="true"></column>
+		</many-to-one>
+		<property name="mutual_word_kh" column="MUTUAL_WORD_KH"></property>
+	</class>
+</hibernate-mapping>

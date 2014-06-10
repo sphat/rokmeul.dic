@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.hibernate.tool.dic.WordType" table="WORD_TYPE">
+		<id name="pk_seq" type="java.lang.Long">
+			<!--<generator class="increment"/>-->
+			<column name="PK_SEQ" />
+			<generator class="identity" />
+		</id>
+		<!-- <set name="word_collection" inverse="true" cascade="all"> -->
+		<set name="word_collection" inverse="true" lazy="true" fetch="select">
+			<key column="FK_WORD_TYPE_SEQ" not-null="true" />
+			<one-to-many class="metier.hibernate.tool.dic.Word" />
+		</set>
+		<property name="type_abbriviation" column="TYPE_ABBRIVIATION"></property>
+		<property name="type_full_fr" column="TYPE_FULL_FR"></property>
+		<property name="type_full_kh" column="TYPE_FULL_KH"></property>
+	</class>
+	
+	<sql-query name="getAllWordType">
+		<return alias="wordType" class="metier.hibernate.tool.dic.WordType" />
+		<![CDATA[select * from word_type]]>
+	</sql-query>
+	
+	<sql-query name="getWordTypeById">
+		<return alias="wordType" class="metier.hibernate.tool.dic.WordType" />
+		<![CDATA[select * from word_type where pk_seq=:word_type_pk_seq]]>
+	</sql-query>	
+</hibernate-mapping>

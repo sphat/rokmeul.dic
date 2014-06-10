@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="metier.hibernate.tool.dic.Word" table="WORD">
+		<id name="pk_seq" type="java.lang.Long">
+			<column name="PK_SEQ" />
+			<!-- <generator class="increment" /> -->
+			<generator class="identity" />
+		</id>
+		<property name="word" column="WORD"></property>
+		<property name="word_definition" column="WORD_DEFINITION"></property>
+		<property name="definition_kh" column="DEFINITION_KH"></property>
+		<property name="definition_fr" column="DEFINITION_FR"></property>
+		<property name="example_kh" column="EXAMPLE_KH"></property>
+		<property name="example_fr" column="EXAMPLE_FR"></property>
+		<!--<many-to-one name="word_type" class="metier.hibernate.tool.dic.WordType" 
+			fetch="select" lazy="no-proxy"> -->
+		<many-to-one name="word_type" class="metier.hibernate.tool.dic.WordType"
+			fetch="select">
+			<column name="FK_WORD_TYPE_SEQ" not-null="true"></column>
+		</many-to-one>
+		
+		<set name="wordSyn" table="SYNONYME" inverse="true" lazy="true" fetch="select">
+			<key>
+				<column name="FK_WORD_SEQ" />
+			</key>
+			<one-to-many class="metier.hibernate.tool.dic.Synonyme"/>
+		</set>
+				
+	</class>
+
+	<sql-query name="Word.getAllWord">
+		<return alias="word" class="metier.hibernate.tool.dic.Word" />
+		<![CDATA[SELECT * FROM Word]]>
+	</sql-query>
+	
+	<!-- This Style work only if the return type is the same as the declared object -->
+	<query name="getAllWord">
+		<![CDATA[FROM Word]]>
+	</query>
+	
+	<query name="Word.getWordById">
+		<![CDATA[FROM Word WHERE pk_seq=:word_pk_seq]]>
+	</query>	
+
+</hibernate-mapping>

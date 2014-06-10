@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+    <form-beans type="org.apache.struts.action.ActionFormBean">
+        <form-bean name="AddWordForm" type="metier.dictionary.addword.AddWordForm"/>
+        <form-bean name="AddWordTypeForm" type="metier.dictionary.addwordtype.AddWordTypeForm" />
+        <form-bean name="GetWordForm" type="metier.dictionary.getword.GetWordForm"/>
+        <form-bean name="getWordTypeForm" type="metier.dictionary.getwordtype.GetWordTypeForm" />
+        <form-bean name="EditWordForm" type="metier.dictionary.editword.EditWordForm" />
+    </form-beans>
+    
+
+    <action-mappings type="org.apache.struts.action.ActionMapping">
+
+		<action path="/edit_word" name="EditWordForm" input="/edit_word.jsp" scope="request" type="metier.dictionary.editword.EditWordAction">
+			<forward name="success" path="/edit_word.jsp" />
+		</action>
+
+        <action path="/add_word" name="AddWordForm" input="/add_word.jsp" scope="request" type="metier.dictionary.addword.AddWordAction">
+        	<forward name="success" path="/add_word.jsp" />
+        </action>
+        
+        <action path="/add_word_type" name="AddWordTypeForm" input="/add_word_type.jsp" scope="request" type="metier.dictionary.addwordtype.AddWordTypeAction">
+        	<forward name="success" path="/add_word_type.jsp" />
+        </action>
+
+		<action attribute="getWordTypeForm" path="/get_word_type" name="getWordTypeForm" input="/get_word_type.jsp" scope="request" type="metier.dictionary.getwordtype.GetWordTypeAction">
+			<forward name="success" path="/get_word_type.jsp" />
+		</action>
+        
+        <action input="/get_word.jsp" name="GetWordForm" path="/get_word" scope="request" type="metier.dictionary.getword.GetWordAction">
+            <forward name="success" path="/get_word.jsp" />
+        </action>
+          
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/vaannila/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>
