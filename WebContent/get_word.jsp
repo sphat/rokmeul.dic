@@ -17,6 +17,7 @@
 		 <logic:iterate name="lstWord" id="lstWordID">		 
 		 <p>
 <%-- 		    <bean:write name="lstWordTypeID" property="pk_seq"/> -- --%>
+			<a id="<bean:write name="lstWordID" property="word"/>"></a>
 			Word : <bean:write name="lstWordID" property="word"/>  --  
 			<bean:write name="lstWordID" property="word_definition"/>  -- 
 			<bean:write name="lstWordID" property="definition_kh"/> -- <bean:write name="lstWordID" property="definition_fr"/> -- <html:link page="/edit_word.do?id=${lstWordID.pk_seq}">EDIT</html:link>

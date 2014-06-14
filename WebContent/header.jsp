@@ -7,6 +7,9 @@
 <script type="text/javascript" src="js/formcheck/formcheck.js"></script>
 <script type="text/javascript" src="js/formcheck/fauxselect.js"></script>
 <script type="text/javascript" src="js/formcheck/placeholder.js"></script>
+<script type="text/javascript" src="js/autocompleter/Autocompleter.js"></script>
+<script type="text/javascript" src="js/autocompleter/Autocompleter.Request.js"></script>
+<script type="text/javascript" src="js/autocompleter/Observer.js"></script>
 <script type="text/javascript">
 window.addEvent('domready',function(){
     if ($('AddWordForm')) {

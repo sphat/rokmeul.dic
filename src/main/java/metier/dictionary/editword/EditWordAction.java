@@ -64,7 +64,7 @@ public class EditWordAction extends DicDaoObject {
 
 			DicDaoObject.updateWord(editWordForm);
 			response.setStatus(response.SC_SEE_OTHER);
-			response.setHeader("Location", "http://localhost:8080/strutshsqldb/get_word.do");
+			response.setHeader("Location", "http://localhost:8080/strutshsqldb/get_word.do#"+editWordForm.getWord());
 		}
 		return mapping.findForward(SUCCESS);
 	}

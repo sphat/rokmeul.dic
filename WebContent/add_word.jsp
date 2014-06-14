@@ -51,7 +51,7 @@
 						<div class="Row">
 							<div class="Cell">Word :</div>
 							<div class="Cell">
-								<html:text name="AddWordForm" property="word" styleClass="validate['required','alpha']" />
+								<html:text name="AddWordForm" property="word" styleClass="validate['required','alpha'] txtbox" />
 							</div>
 
 						</div>
@@ -77,7 +77,7 @@
 						<div class="Row">
 							<div class="Cell">Word Définition :</div>
 							<div class="Cell">
-								<html:text name="AddWordForm" property="word_definition" />
+								<html:text name="AddWordForm" property="word_definition" styleClass="txtbox" />
 							</div>
 
 						</div>
@@ -106,7 +106,7 @@
 						<div class="Row">
 							<div class="Cell">Synonyme FR :</div>
 							<div class="Cell">
-								<html:text name="AddWordForm" property="synonyme_fr" />
+								<html:text name="AddWordForm" property="synonyme_fr" styleClass="txtbox" />
 							</div>
 
 						</div>
