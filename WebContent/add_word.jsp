@@ -8,6 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="styles/css.css" rel="stylesheet" type="text/css" />
+<jsp:include page="header.jsp" />
 <title>Add word</title>
 <html:base />
 </head>
@@ -43,14 +44,14 @@
 				<div style="color: red">
 					<html:errors />
 				</div>
-				<html:form action="/add_word">
+				<html:form action="/add_word" styleId="AddWordForm">
 
 
 					<div class="Table">
 						<div class="Row">
 							<div class="Cell">Word :</div>
 							<div class="Cell">
-								<html:text name="AddWordForm" property="word" />
+								<html:text name="AddWordForm" property="word" styleClass="validate['required','alpha']" />
 							</div>
 
 						</div>
@@ -86,7 +87,7 @@
 							<div class="Cell">Définition KH :</div>
 							<div class="Cell">
 								<html:textarea name="AddWordForm" property="definition_kh"
-									styleClass="text_area" />
+									styleClass="text_area validate['required']" />
 							</div>
 
 						</div>

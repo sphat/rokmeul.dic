@@ -1,0 +1,351 @@
+@CHARSET "UTF-8";
+/*Faux select*/
+
+.FormPH .select_liste {
+	position: absolute;
+	display: none;
+	width: 185px;
+	background: #FFFFFF;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding: 5px;
+	margin : 30px 0px 0px 0px;
+	-webkit-box-shadow: 5px 5px 5px #b2b2b2;
+	-moz-box-shadow: 5px 5px 5px #b2b2b2;
+	box-shadow: 5px 5px 5px #b2b2b2;
+/*IE*/
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#b2b2b2', Direction=120, Strength=5);
+	zoom: 1;
+	z-index: 1000;
+	min-height: 63px;
+	overflow: auto;
+}
+.FormPH SPAN.select_select, .FormPH SPAN.select_civ_select {
+	display:block;
+	height: 19px;
+	padding: 3px 2px 0px 25px;
+	margin: 0px 0px 10px 0px;
+	border: none;
+	cursor: pointer;
+	color: #858585;
+}
+
+.FormPH SPAN.select_select {
+	width: 170px;
+	background:url(/strutshsqldb/charte/formulaire/select_mag.gif) no-repeat 0px 0px;
+}
+
+.FormPH SPAN.select_civ_select {
+	width: 131px;
+	background:url(/strutshsqldb/charte/formulaire/select.gif) no-repeat 0px 0px;
+}
+
+.FormPH SPAN.select_civ_select.erreur {
+	width: 131px;
+	background:url(/strutshsqldb/charte/formulaire/select.gif) no-repeat scroll 0 -22px transparent;
+	color: #B93636;
+}
+
+.FormPH SPAN.select_gd_select, .FormPH SPAN.select_gd_select2 {
+	float: left;
+	height: 22px;
+	line-height: 21px;
+	vertical-align: middle;
+	margin: 0px 0px 10px 0;
+	border: none;
+	cursor: pointer;
+	color: #858585;
+}
+
+.FormPH SPAN.select_gd_select {
+	width: 306px;
+	padding: 0px 2px 0 25px;
+	background: url(/strutshsqldb/charte/formulaire/select_gd.gif) no-repeat 0px 0px;
+}
+
+.FormPH SPAN.select_gd_select.erreur{
+	width: 306px;
+	padding: 0px 2px 0 25px;
+	background: url(/strutshsqldb/charte/formulaire/select_gd.gif) no-repeat 0px 0px;
+	background: url(/strutshsqldb/charte/formulaire/input_gd2.gif) no-repeat 0px -22px;
+	color: #cc0000;
+}
+
+.FormPH SPAN.select_gd_select2 {
+	width: 321px;
+	padding: 0px 2px 0 8px;
+	background: url(/strutshsqldb/charte/formulaire/input_gd2.gif) no-repeat 0px 0px;
+}
+
+#mag .select_liste, #temoin .select_liste, #catalogue .select_liste, #devis_kit .select_liste, #devis_installation .select_liste, #demande_rdv .select_liste, #demande_delai .select_liste {
+	margin-top:-12px;
+}
+
+#kit .select_liste, #etude .select_liste, #contact .select_liste {
+	margin-top:-12px;
+}
+
+.select_liste UL {
+	margin: 0 0px 0px 20px;
+	padding: 10px 0px 0px 0px;
+}
+
+.select_liste UL LI {
+	height:18px;
+	font-size:11px;
+	list-style: none;
+}
+
+.select_liste ul li .Lien_pays, .select_liste ul li .Lien_region, .select_liste ul li .Lien_dept, .select_liste ul li .Lien_profil, .select_liste ul li .Lien_delai {
+	text-decoration: none;
+	color:#858585;
+}
+
+.select_liste ul li .Lien_civilite {
+	text-decoration: none;
+	color:#858585;
+}
+
+.select_liste ul li:hover .Lien_pays, .select_liste ul li:hover .Lien_region, .select_liste ul li:hover .Lien_dept, .select_liste ul li:hover .Lien_profil, .select_liste ul li:hover .Lien_delai {
+	text-decoration: none;
+	color:#00afff;
+}
+
+.select_liste ul li:hover .Lien_civilite {
+	text-decoration: none;
+	color:#00afff;
+}
+
+#mag SPAN.select_select.erreur {
+	background:url(/strutshsqldb/charte/formulaire/select_mag.gif) no-repeat 0px -22px;
+	color: #cc0000;
+}
+
+#mag SPAN.select_gd_select.erreur {
+	background:url(/strutshsqldb/charte/formulaire/select_gd.gif) no-repeat 0px -22px;
+	color: #cc0000;
+}
+
+#kit SPAN.select_gd_select2.erreur, #etude SPAN.select_gd_select2.erreur {
+	background:url(/strutshsqldb/charte/formulaire/input_gd2.gif) no-repeat 0px -22px;
+	color: #cc0000;
+}
+
+/*Input, grand input, textarea*/
+
+/*Labels*/
+DIV.placeholder.input LABEL{
+	position: absolute;
+	padding: 0px 0px 0px 6px;
+	color: #858585;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+}
+
+DIV.placeholder.gd_input LABEL {
+	position: absolute;
+	padding: 0px 0px 0px 6px;
+	color: #858585;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+}
+
+DIV.placeholder.textarea LABEL {
+	position: absolute;
+	display: block;
+	height: 25px;
+	margin: -5px 0 0 2px;
+	line-height: 25px;
+	color: #858585;
+}
+
+/*Erreur*/
+DIV.placeholder.input.erreur INPUT,
+DIV.placeholder.input.erreur LABEL,
+DIV.placeholder.input.erreur INPUT.gd_input,
+DIV.placeholder.textarea.erreur LABEL {
+	color: #B93636;
+}
+
+DIV.placeholder.input.erreur {
+	background: url(/strutshsqldb/charte/formulaire/input.gif) no-repeat 0px -22px;
+}
+
+.FormPH DIV.placeholder.input.erreur {
+	background: url(/strutshsqldb/charte/formulaire/input.gif) no-repeat 0px -22px;
+}
+
+DIV.placeholder.gd_input.erreur {
+	background: url(/strutshsqldb/charte/formulaire/input_gd.gif) no-repeat 0px -22px;
+}
+
+.FormPH DIV.placeholder.gd_input.erreur {
+	background: url(/strutshsqldb/charte/formulaire/input_gd.gif) no-repeat 0px -22px;
+}
+
+DIV.placeholder.textarea.erreur {
+	background:url(/strutshsqldb/charte/formulaire/textarea.gif) no-repeat 0px -85px;
+}
+
+.FormPH DIV.textarea.textarea.erreur {
+	background: url(/strutshsqldb/charte/formulaire/textarea.gif) no-repeat 0px -85px;
+}
+
+/*Fonds*/
+DIV.placeholder.textarea {
+	position: relative;
+	height: 85px;
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+
+DIV.placeholder.input {
+	position: relative;
+	margin: 0px 15px 16px 0px;
+	width: 158px;
+	height: 22px;
+	background: url(/strutshsqldb/charte/formulaire/input.gif) no-repeat 0px 0px;
+	overflow: hidden;
+}
+
+DIV.placeholder.gd_input {
+	position: relative;
+	margin: 0px 15px 16px 0px;
+	width: 331px;
+	height: 22px;
+	overflow: hidden;
+	background: url(/strutshsqldb/charte/formulaire/input_gd.gif) no-repeat 0px 0px;
+}
+
+/*champs saisie*/
+DIV.placeholder INPUT {
+	position: absolute;
+	height: 22px;
+	width: 95%;
+	top: -1px;
+	left: 0px;
+	background: transparent;
+	padding: 0px 0px 0px 4px;
+	border: none;
+	color: #000000;
+}
+
+DIV.placeholder INPUT.gd_input {
+	position: absolute;
+	height: 22px;
+	width: 95%;
+	top: -1px;
+	left: 0px;
+	background: transparent;
+	padding: 0px 0px 0px 4px;
+	border: none;
+}
+
+DIV.placeholder TEXTAREA {
+	background: transparent;
+	outline-style: none;
+	position: absolute;
+	border: none;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*Telecharger CATALOGUE*/
+.FormPH DIV.placeholder.input {
+	float: left;
+	width: 158px;
+	height:22px;
+	margin: 0 15px 8px 0;
+	background: url(/strutshsqldb/charte/formulaire/input.gif) no-repeat 0px 0px;
+}
+
+.FormPH DIV.placeholder.gd_input {
+	float: left;
+	width: 331px;
+	height:22px;
+	margin: 0 0 8px 0;
+	background: url(/strutshsqldb/charte/formulaire/input_gd.gif) no-repeat 0px 0px;
+}
+
+.FormPH DIV.placeholder.textarea {
+	position: relative;
+	width: 324px;
+	height: 75px;
+	border: none;
+	background: url(/strutshsqldb/charte/formulaire/textarea.gif) no-repeat 0px 0px;
+	overflow: hidden;
+	padding: 4px 2px 6px 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#858585;
+	margin: 0px 0px 8px 0px;
+	*margin: 8px 0px 8px 0px;
+}
+
+.FormPH SPAN.select_select_, .FormPH SPAN.select_select_2 {
+    background: url("/strutshsqldb/charte/formulaire/select.gif") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #858585;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    height: 19px;
+    margin: 0 0 10px;
+    padding: 3px 2px 0 25px;
+    width: 170px;
+}
+
+.FormPH SPAN.select_select_.erreur, .FormPH SPAN.select_select_2.erreur {
+    background: url("/strutshsqldb/charte/formulaire/select.gif") no-repeat scroll 0 -22px transparent;
+    color: #B93636;
+    width: 131px;
+}
+
+.FormPH .select_liste_ {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    box-shadow: 5px 5px 5px #B2B2B2;
+    display: none;
+    font-size: 12px;
+    margin: -13px 0 0;
+    max-height: 100px;
+    min-height: 50px;
+    overflow: auto;
+    padding: 5px;
+    position: absolute;
+    width: 146px;
+    z-index: 1000;
+}
+.FormPH .select_liste_ ul {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+.FormPH .select_liste_ ul li {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    font-weight: normal;
+    line-height: 12px;
+    list-style: none outside none;
+    margin: 0 0 5px;
+    padding: 0;
+}
+.FormPH .select_liste_ ul li a {
+    color: #7A7877;
+    display: block;
+    margin: 0;
+    padding: 0 0 0 18px;
+    text-decoration: none;
+}
+.FormPH .select_liste_ ul li a:hover {
+    color: #37B5FF;
+    text-decoration: none;
+}

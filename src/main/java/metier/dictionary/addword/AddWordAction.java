@@ -43,16 +43,12 @@ public class AddWordAction extends DicDaoObject {
 			System.out.println("-----ExampleKH : "+addWordForm.getExample_kh());
 			System.out.println("-----DifinitionFr :"+addWordForm.getDefinition_fr());
 			System.out.println("-----ExampleFr : "+addWordForm.getExample_fr());
-			DicDaoObject.addWord(addWordForm);
-			
-			//addWordForm = new AddWordForm();
-			//reset(mapping, request);
-//			addWordForm.reset(mapping, request);
+			//DicDaoObject.addWord(addWordForm);
 			
 			//To clear form after submition
+			
 			response.setStatus(response.SC_SEE_OTHER);
-			response.setHeader("Location", "http://localhost:8080/Strut_HSQLDB/add_word.do");
-			//return null;
+			response.setHeader("Location", "http://localhost:8080/strutshsqldb/add_word.do");
 			
 		}else{
 			System.out.println("-----Form Not Set-----");
